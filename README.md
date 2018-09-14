@@ -21,6 +21,7 @@ denunciam um ao outro, são punidos com a mesma penalidade (5 anos de
 prisão): menor do que a máxima, mas maior do que a pena branda.
 
 **Dilema do Prisioneiro Simples e Iterado**
+
 No jogo simples do Dilema do Prisioneiro (Dilema do Prisioneiro Não-Iterado –
 DPNI), cada rodada é independente uma da outra.
 
