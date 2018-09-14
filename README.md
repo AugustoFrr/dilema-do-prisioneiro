@@ -11,7 +11,7 @@ calado (COOPERAR), considerando-se que:
 em prejuízo do outro, que ganha a penalidade.</li>
 <li>Cooperar: significa realizar uma ação mediadora que busque trazer
 compartilhamento de custos e benefícios em uma interação.</li>
-<ul>
+</ul>
 
 Caso um dos suspeitos denuncie o outro, e este fique calado, o denunciante
 obtém a liberdade, enquanto o outro arcaria sozinho com a pena máxima (10
