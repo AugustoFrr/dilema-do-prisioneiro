@@ -38,19 +38,19 @@ seres aparentemente irracionais e sem aparato linguístico como bactérias.
 Uma análise dos tipos de estratégia utilizada demonstra as variações de
 estratégia que um jogo que utilize o DPI como modelo pode assumir:
 <ul>
-<li> **Olho por olho** – repete a última escolha do oponente. Ou seja: se o
+<li> Olho por olho – repete a última escolha do oponente. Ou seja: se o
 jogador 1 trai, o jogador 2 também trai; se jogador 1 coopera; o jogador
 2 também coopera. Olho por olho nunca entra em um conflito
 desnecessário. Na primeira execução, a decisão é aleatória. </li>
-<li> **Olho por dois olhos** – semelhante a Olho por olho, exceto que o
+<li> Olho por dois olhos – semelhante a Olho por olho, exceto que o
 oponente necessita fazer a mesma escolha duas vezes em uma linha
 antes de haver retaliação. Ou seja, jogador 1 coopera enquanto jogador 2
 não trair duas ou mais vezes. </li>
-<li> **Provador Ingênuo** – repete a última escolha do oponente (como em Olho
+<li> Provador Ingênuo – repete a última escolha do oponente (como em Olho
 por Olho), mas às vezes trai no lugar de cooperação. Ou seja, jogador
 coopera ou trai de acordo com as ações do jogador, mas trai de forma
 aleatória. </li>
-<li> **Retaliador Permanente** – coopera até o oponente trair, e caso isto
+<li> Retaliador Permanente – coopera até o oponente trair, e caso isto
 ocorra sempre trairá sem perdão. É uma estratégia inclemente, pois
 jamais coopera depois do outro jogador ter desertado primeiro, sendo
 extremamente sensível ao erro, já que qualquer deserção equivocada
