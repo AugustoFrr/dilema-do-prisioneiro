@@ -167,36 +167,52 @@ public class dilemaMain {
 
 
 
+    static int bubbleSort(int[] vetor) {
+        int comparacoes = 0;
+        for (int i = vetor.length - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (vetor[j] > vetor[j + 1]) {
+                    swap(vetor, j, j + 1);
 
-
-
-
-
-
-
-
-        Random random = new Random();
-
-        int n = 5;
-        int v[] = new int[n];
-        for (int i = 0; i < v.length; i++) {
-            int valor = random.nextInt(100);
-            v[i] = valor;
+                }
+                comparacoes++;
+            }
         }
+        return comparacoes;
+    }
 
 
+    static int selectionSort(int v[]) {
+        int comparacoes = 0;
+        int menor;
+        for (int i = 0; i < v.length - 1; i++) {
+            menor = i;
+            for (int j = i + 1; j < v.length; j++) {
+                if (v[j] < v[menor]) {
+                    menor = j;
+                }
+                comparacoes++;
+            }
+            swap(v, i, menor);
+        }
+        return comparacoes;
+    }
 
-        int[] clone = v.clone();
 
-
-        clone = v.clone();
-        selectionSort(clone);
-        
-        clone = v.clone();
-        insertionSort(clone);
-        
-        clone = v.clone();
-        heapSort(clone);
+    static int insertionSort(int[] vetor) {
+        int comparacoes = 0;
+        for (int i = 0; i < vetor.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (vetor[j] < vetor[j - 1]) {
+                    swap(vetor, j, j - 1);
+                } else {
+                    break;
+                }
+                comparacoes++;
+            }
+        }
+        return comparacoes;
+    }
 
 
 
