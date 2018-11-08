@@ -166,42 +166,49 @@ public class dilemaMain {
 
 
 
-public static int bucketSort(int[] vetor, int maiorValor) {
-        int comparacoes = 0;
-        int numDivisao = 5;
-        int numBaldes = maiorValor / numDivisao;
-        LinkedList[] B = new LinkedList[numBaldes];
-       
-        for (int i = 0; i < numBaldes; i++) {
-            B[i] = new LinkedList<>();
+    static int mergeSortIterativo(int[] vetor) {
+        int somaComparacoes = 0;
+        int p, r;
+        int b = 1;
+        while (b < vetor.length) {
+            p = 0;
+            while (p + b < vetor.length) {
+                r = p + 2 * b;
+                if (r > vetor.length) {
+                    r = vetor.length;
+                }
+                somaComparacoes += merge(vetor, p, p + b - 1, r - 1);
+                p = p + 2 * b;
+            }
+            b = b * 2;
         }
-        
-        for (int i = 0; i < vetor.length; i++) {
-            int j = numBaldes - 1;
-            while (true) {
-                if (j < 0) {
-                    break;
-                }
-                if (vetor[i] >= (j * numDivisao)) {
-                    B[j].add(vetor[i]);
-                    break;
-                }
-                j--;
-            }
-        }        
-        int indice = 0;
-        for (int i = 0; i < numBaldes; i++) {
+        return somaComparacoes;
+    }
 
-            int[] aux = new int[B[i].size()];
-            
-            for (int j = 0; j < aux.length; j++) {
-                aux[j] = (Integer) B[i].get(j);
+    static int merge(int[] vetor, int p, int q, int r) {
+        int comparacoes = 0;
+        int n1 = q - p + 1;
+        int n2 = r - q;
+        int[] aux1 = new int[n1];
+        for (int i = 0; i < n1; i++) {
+            aux1[i] = vetor[i + p];
+        }
+        int[] aux2 = new int[n2];
+        for (int i = 0; i < n2; i++) {
+            aux2[i] = vetor[i + q + 1];
+        }
+        int i = 0, j = 0;
+        for (int k = p; k <= r; k++) {
+            if (i == n1) {
+                vetor[k] = aux2[j++];
+            } else if (j == n2) {
+                vetor[k] = aux1[i++];
+            } else if (aux1[i] < aux2[j]) {
+                vetor[k] = aux1[i++];
+            } else {
+                vetor[k] = aux2[j++];
             }
-            comparacoes += insertionSort(aux); 
-
-            for (int j = 0; j < aux.length; j++, indice++) {
-                vetor[indice] = aux[j];
-            }
+            comparacoes++;
         }
         return comparacoes;
     }
