@@ -166,7 +166,7 @@ public class dilemaMain {
 
 
 
-    static int mergeSortIterativo(int[] vetor) {
+    static int mergeSort(int[] vetor) {
         int somaComparacoes = 0;
         int p, r;
         int b = 1;
