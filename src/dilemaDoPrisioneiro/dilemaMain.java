@@ -167,53 +167,19 @@ public class dilemaMain {
 
 
 
-    static int bubbleSort(int[] vetor) {
-        int comparacoes = 0;
-        for (int i = vetor.length - 1; i >= 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (vetor[j] > vetor[j + 1]) {
-                    swap(vetor, j, j + 1);
+    static int quickSort(int[] vetor, int p, int r, int comparacoes) {
+        int somaComparacoes = comparacoes;
 
-                }
-                comparacoes++;
-            }
+        if (p < r) {
+            int[] retorno = partition(vetor, p, r);
+            int q = retorno[0];
+            somaComparacoes += retorno[1];
+
+            somaComparacoes = quickSort(vetor, p, q - 1, somaComparacoes);
+            somaComparacoes = quickSort(vetor, q + 1, r, somaComparacoes);
         }
-        return comparacoes;
+        return somaComparacoes;
     }
-
-
-    static int selectionSort(int v[]) {
-        int comparacoes = 0;
-        int menor;
-        for (int i = 0; i < v.length - 1; i++) {
-            menor = i;
-            for (int j = i + 1; j < v.length; j++) {
-                if (v[j] < v[menor]) {
-                    menor = j;
-                }
-                comparacoes++;
-            }
-            swap(v, i, menor);
-        }
-        return comparacoes;
-    }
-
-
-    static int insertionSort(int[] vetor) {
-        int comparacoes = 0;
-        for (int i = 0; i < vetor.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (vetor[j] < vetor[j - 1]) {
-                    swap(vetor, j, j - 1);
-                } else {
-                    break;
-                }
-                comparacoes++;
-            }
-        }
-        return comparacoes;
-    }
-
 
 
 
