@@ -132,3 +132,90 @@ public class dilemaMain {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Random random = new Random();
+
+        int n = 5;
+        int v[] = new int[n];
+        for (int i = 0; i < v.length; i++) {
+            int valor = random.nextInt(100);
+            v[i] = valor;
+        }
+
+
+
+        int[] clone = v.clone();
+
+
+        clone = v.clone();
+        selectionSort(clone);
+        
+        clone = v.clone();
+        insertionSort(clone);
+        
+        clone = v.clone();
+        heapSort(clone);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
