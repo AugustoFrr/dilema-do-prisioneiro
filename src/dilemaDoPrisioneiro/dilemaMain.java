@@ -146,4 +146,57 @@ public class dilemaMain {
 
 
 
+    static int heapSort(int[] vetor) {
+        int comparacoes = 0;
+        buildMaxHeap(vetor, vetor.length);
+        int n = vetor.length;
+        for (int i = n - 1; i >= 1; i--) {
+            swap(vetor, 0, i);
+            n--;
+            comparacoes += maxHeapfy(vetor, n, 0);
+        }
+        return comparacoes;
+    }
+
+    static int buildMaxHeap(int[] vetor, int n) {
+        int retorno = 0;
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            retorno += maxHeapfy(vetor, n, i);
+        }      
+        return retorno;
+    }
+
+    static int maxHeapfy(int[] vetor, int n, int i) {
+        int somaComparacoes = 0;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int maior;
+
+        if (left < n && vetor[left] > vetor[i]) {
+            maior = left;
+        } else {
+            maior = i;
+        }
+        if (right < n && vetor[right] > vetor[maior]) {
+            maior = right;
+        }
+        if (maior != i) {
+            swap(vetor, i, maior);
+            somaComparacoes += maxHeapfy(vetor, n, maior);
+        }
+        somaComparacoes++;
+        return somaComparacoes;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
