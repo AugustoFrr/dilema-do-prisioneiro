@@ -166,19 +166,44 @@ public class dilemaMain {
 
 
 
-
-    static int quickSort(int[] vetor, int p, int r, int comparacoes) {
-        int somaComparacoes = comparacoes;
-
-        if (p < r) {
-            int[] retorno = partition(vetor, p, r);
-            int q = retorno[0];
-            somaComparacoes += retorno[1];
-
-            somaComparacoes = quickSort(vetor, p, q - 1, somaComparacoes);
-            somaComparacoes = quickSort(vetor, q + 1, r, somaComparacoes);
+public static int bucketSort(int[] vetor, int maiorValor) {
+        int comparacoes = 0;
+        int numDivisao = 5;
+        int numBaldes = maiorValor / numDivisao;
+        LinkedList[] B = new LinkedList[numBaldes];
+       
+        for (int i = 0; i < numBaldes; i++) {
+            B[i] = new LinkedList<>();
         }
-        return somaComparacoes;
+        
+        for (int i = 0; i < vetor.length; i++) {
+            int j = numBaldes - 1;
+            while (true) {
+                if (j < 0) {
+                    break;
+                }
+                if (vetor[i] >= (j * numDivisao)) {
+                    B[j].add(vetor[i]);
+                    break;
+                }
+                j--;
+            }
+        }        
+        int indice = 0;
+        for (int i = 0; i < numBaldes; i++) {
+
+            int[] aux = new int[B[i].size()];
+            
+            for (int j = 0; j < aux.length; j++) {
+                aux[j] = (Integer) B[i].get(j);
+            }
+            comparacoes += insertionSort(aux); 
+
+            for (int j = 0; j < aux.length; j++, indice++) {
+                vetor[indice] = aux[j];
+            }
+        }
+        return comparacoes;
     }
 
 
