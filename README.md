@@ -1,7 +1,7 @@
 # dilema-do-prisioneiro
 Conceito de Ponto de Equilíbrio com o Dilema do Prisioneiro.
 
-# Problema: Dilema do Prisioneiro
+## Problema: Dilema do Prisioneiro
 Dois suspeitos de terem cometido um crime grave são presos e interrogados
 separadamente. Na tentativa de incriminá-los, o inspetor, secretamente
 oferece a cada um a opção de entregar o comparsa e ficar livre (TRAIR) ou ficar
